@@ -162,6 +162,7 @@ resource "azurerm_mssql_server_security_alert_policy" "alertpolicy1" {
   ]
   retention_days  = 20
   email_addresses = ["securityengineer@bridgecrew.io"]
+  email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy2" {
@@ -176,6 +177,7 @@ resource "azurerm_mssql_server_security_alert_policy" "alertpolicy2" {
   ]
   retention_days  = 20
   email_addresses = ["securityengineer@bridgecrew.io"]
+  email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy3" {
@@ -190,6 +192,7 @@ resource "azurerm_mssql_server_security_alert_policy" "alertpolicy3" {
   ]
   retention_days  = 20
   email_addresses = ["securityengineer@bridgecrew.io"]
+  email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy4" {
@@ -204,6 +207,7 @@ resource "azurerm_mssql_server_security_alert_policy" "alertpolicy4" {
   ]
   retention_days  = 20
   email_addresses = ["securityengineer@bridgecrew.io"]
+  email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy5" {
@@ -231,6 +235,7 @@ resource "azurerm_mssql_server_security_alert_policy" "alertpolicy6" {
   ]
   retention_days  = 20
   email_addresses = ["securityengineer@bridgecrew.io"]
+  email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy7" {
@@ -245,4 +250,5 @@ resource "azurerm_mssql_server_security_alert_policy" "alertpolicy7" {
   ]
   retention_days  = 20
   email_addresses = ["securityengineer@bridgecrew.io"]
+  email_account_admins = true
 }

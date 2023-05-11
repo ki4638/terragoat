@@ -136,7 +136,6 @@ resource "aws_subnet" "web_subnet" {
   vpc_id                  = aws_vpc.web_vpc.id
   cidr_block              = "172.16.10.0/24"
   availability_zone       = "${var.region}a"
-  map_public_ip_on_launch = true
 
   tags = merge({
     Name = "${local.resource_prefix.value}-subnet"
@@ -156,7 +155,6 @@ resource "aws_subnet" "web_subnet2" {
   vpc_id                  = aws_vpc.web_vpc.id
   cidr_block              = "172.16.11.0/24"
   availability_zone       = "${var.region}b"
-  map_public_ip_on_launch = true
 
   tags = merge({
     Name = "${local.resource_prefix.value}-subnet2"
@@ -286,6 +284,16 @@ resource "aws_s3_bucket" "flowbucket" {
     yor_trace            = "f058838a-b1e0-4383-b965-7e06e987ffb1"
   })
 }
+
+
+resource "aws_s3_bucket_versioning" "flowbucket" {
+  bucket = aws_s3_bucket.flowbucket.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
 
 output "ec2_public_dns" {
   description = "Web Host Public DNS name"
